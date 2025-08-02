@@ -3,137 +3,162 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Landing Page</title>
   </head>
-  <body class="bg-white-300">
-    <header class="flex items-center justify-center h-12 bg-white">
-        <div class="flex items-center w-full max-w-6xl px-4">
+  <body class="bg-gray-50">
+    <header class="flex items-center justify-center min-h-[60px] bg-white shadow-sm">
+        <div class="flex items-center justify-between w-full max-w-6xl px-4 py-2">
         <div class="flex items-center space-x-2">
-          <img src="asset/logo.png" alt="Logo" class="h-8 w-auto" />
-          <h2 class="text-lg font-semibold">FURNITURE</h2>
+          <img src="asset/logo.png" alt="Logo" class="h-6 w-auto sm:h-8" />
+          <h2 class="text-base sm:text-lg font-semibold">FURNITURE</h2>
         </div>
-        <nav class="flex items-center justify-center space-x-4 flex-1">
-          <a href="#" class="text-gray-700 hover:text-gray-900">Home</a>
-          <a href="#" class="text-gray-700 hover:text-gray-900">Products</a>
-          <a href="#" class="text-gray-700 hover:text-gray-900">About Us</a>
-          <a href="#" class="text-gray-700 hover:text-gray-900">Contact</a>
+        <nav class="hidden md:flex items-center justify-center space-x-4 flex-1">
+          <a href="#" class="text-gray-700 hover:text-gray-900 text-sm lg:text-base">Home</a>
+          <a href="#" class="text-gray-700 hover:text-gray-900 text-sm lg:text-base">Products</a>
+          <a href="#" class="text-gray-700 hover:text-gray-900 text-sm lg:text-base">About Us</a>
+          <a href="#" class="text-gray-700 hover:text-gray-900 text-sm lg:text-base">Contact</a>
         </nav>
-        <div class="flex items-center space-x-4">
-          <a href="#" class="text-gray-700 hover:text-gray-900"><img src="asset/profile.png" alt="Profile" class="h-6 w-6" /></a>
-          <a href="#" class="text-gray-700 hover:text-gray-900"><img src="asset/search.png" alt="Search" class="h-6 w-6" /></a>
-          <a href="#" class="text-gray-700 hover:text-gray-900"><img src="asset/wishlist.png" alt="Wishlist" class="h-6 w-6" /></a>
-          <a href="#" class="text-gray-700 hover:text-gray-900"><img src="asset/cart.png" alt="Cart" class="h-6 w-6" /></a>
+        <div class="flex items-center space-x-2 sm:space-x-4">
+          <a href="#" class="text-gray-700 hover:text-gray-900"><img src="asset/profile.png" alt="Profile" class="h-5 w-5 sm:h-6 sm:w-6" /></a>
+          <a href="#" class="text-gray-700 hover:text-gray-900"><img src="asset/search.png" alt="Search" class="h-5 w-5 sm:h-6 sm:w-6" /></a>
+          <a href="#" class="text-gray-700 hover:text-gray-900"><img src="asset/wishlist.png" alt="Wishlist" class="h-5 w-5 sm:h-6 sm:w-6" /></a>
+          <a href="#" class="text-gray-700 hover:text-gray-900"><img src="asset/cart.png" alt="Cart" class="h-5 w-5 sm:h-6 sm:w-6" /></a>
+          <!-- Mobile Menu Button -->
+          <button class="md:hidden ml-2 text-gray-700" id="mobile-menu-btn">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <!-- Mobile Navigation Menu -->
+      <div class="md:hidden bg-white border-t border-gray-200 hidden" id="mobile-menu">
+        <div class="px-4 py-2 space-y-2">
+          <a href="#" class="block text-gray-700 hover:text-gray-900 py-2">Home</a>
+          <a href="#" class="block text-gray-700 hover:text-gray-900 py-2">Products</a>
+          <a href="#" class="block text-gray-700 hover:text-gray-900 py-2">About Us</a>
+          <a href="#" class="block text-gray-700 hover:text-gray-900 py-2">Contact</a>
+        </div>
       </div>
     </header>
-    <div>
-        <img src="asset/cover.jpg" alt="Hero Image" class="w-full h-full object-cover" />
-    </div>
-    <div>
-        <h1 class="text-3xl font-bold text-center mt-8">Welcome to Our Furniture Store</h1>
-        <p class="text-center text-gray-600 mt-4">Discover the best furniture for your home.</p>
-    </div>
-    <div class="flex flex-wrap justify-center p-4 ">
-        <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow duration-300 w-50 mt-10 m-3">
-            <img src="asset/product1.jpg" alt="Product 1" class="w-full h-48 object-cover rounded-lg">
-            <h3 class="text-lg font-semibold mt-2">Chair</h3>
-            <p class="text-gray-600">10000 Tk</p>
-        </div>
-        <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow duration-300 w-50 mt-10 m-3">
-            <img src="asset/table.jpg" alt="Product 2" class="w-full h-48 object-cover rounded-lg">
-            <h3 class="text-lg font-semibold mt-2">Table</h3>
-            <p class="text-gray-600">15000 Tk</p>
-        </div>
-        <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow duration-300 w-50 mt-10 m-3">
-            <img src="asset/product3.jpg" alt="Product 3" class="w-full h-48 object-cover rounded-lg">
-            <h3 class="text-lg font-semibold mt-2">Sofa</h3>
-            <p class="text-gray-600">20000 Tk</p>
+    <div class="relative">
+        <img src="asset/cover.jpg" alt="Hero Image" class="w-full h-48 sm:h-64 md:h-80 lg:h-96 object-cover" />
+        <!-- Optional overlay content -->
+        <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center">
+          <div class="text-center text-white px-4">
+            <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 sm:mb-4">Premium Furniture</h1>
+            <p class="text-sm sm:text-base md:text-lg">Transform your space with style</p>
+          </div>
         </div>
     </div>
-    <div class="text-center mt-5">
-        <h1 class="text-3xl font-bold">
+    <div class="px-4 py-6 sm:py-8">
+        <h1 class="text-2xl sm:text-3xl font-bold text-center">Welcome to Our Furniture Store</h1>
+        <p class="text-center text-gray-600 mt-2 sm:mt-4 text-sm sm:text-base">Discover the best furniture for your home.</p>
+    </div>
+    <div class="px-4 py-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto">
+            <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow duration-300">
+                <img src="asset/product1.jpg" alt="Product 1" class="w-full h-40 sm:h-48 object-cover rounded-lg">
+                <h3 class="text-lg font-semibold mt-2">Chair</h3>
+                <p class="text-gray-600">10000 Tk</p>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow duration-300">
+                <img src="asset/table.jpg" alt="Product 2" class="w-full h-40 sm:h-48 object-cover rounded-lg">
+                <h3 class="text-lg font-semibold mt-2">Table</h3>
+                <p class="text-gray-600">15000 Tk</p>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow duration-300">
+                <img src="asset/product3.jpg" alt="Product 3" class="w-full h-40 sm:h-48 object-cover rounded-lg">
+                <h3 class="text-lg font-semibold mt-2">Sofa</h3>
+                <p class="text-gray-600">20000 Tk</p>
+            </div>
+        </div>
+    </div>
+    <div class="text-center px-4 py-6">
+        <h1 class="text-2xl sm:text-3xl font-bold">
             Our Products
         </h1>
     </div>
-    <div class="flex flex-wrap justify-center p-4">
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow duration-300 w-50 mt-10 m-3">
-            <img src="asset/product1.jpg" alt="Product 1" class="w-full h-48 object-cover rounded-lg">
-            <h3 class="text-lg font-semibold mt-2">Chair</h3>
-            <p class="text-gray-600">10000 Tk</p>
+    <div class="px-4 pb-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow duration-300">
+                    <img src="asset/product1.jpg" alt="Product 1" class="w-full h-40 sm:h-48 object-cover rounded-lg">
+                    <h3 class="text-lg font-semibold mt-2">Chair</h3>
+                    <p class="text-gray-600">10000 Tk</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow duration-300">
+                    <img src="asset/table.jpg" alt="Product 2" class="w-full h-40 sm:h-48 object-cover rounded-lg">
+                    <h3 class="text-lg font-semibold mt-2">Table</h3>
+                    <p class="text-gray-600">15000 Tk</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow duration-300">
+                    <img src="asset/product3.jpg" alt="Product 3" class="w-full h-40 sm:h-48 object-cover rounded-lg">
+                    <h3 class="text-lg font-semibold mt-2">Sofa</h3>
+                    <p class="text-gray-600">20000 Tk</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow duration-300">
+                    <img src="asset/product3.jpg" alt="Product 3" class="w-full h-40 sm:h-48 object-cover rounded-lg">
+                    <h3 class="text-lg font-semibold mt-2">Sofa</h3>
+                    <p class="text-gray-600">20000 Tk</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow duration-300">
+                    <img src="asset/product1.jpg" alt="Product 1" class="w-full h-40 sm:h-48 object-cover rounded-lg">
+                    <h3 class="text-lg font-semibold mt-2">Chair</h3>
+                    <p class="text-gray-600">10000 Tk</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow duration-300">
+                    <img src="asset/table.jpg" alt="Product 2" class="w-full h-40 sm:h-48 object-cover rounded-lg">
+                    <h3 class="text-lg font-semibold mt-2">Table</h3>
+                    <p class="text-gray-600">15000 Tk</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow duration-300">
+                    <img src="asset/product3.jpg" alt="Product 3" class="w-full h-40 sm:h-48 object-cover rounded-lg">
+                    <h3 class="text-lg font-semibold mt-2">Sofa</h3>
+                    <p class="text-gray-600">20000 Tk</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow duration-300">
+                    <img src="asset/product3.jpg" alt="Product 3" class="w-full h-40 sm:h-48 object-cover rounded-lg">
+                    <h3 class="text-lg font-semibold mt-2">Sofa</h3>
+                    <p class="text-gray-600">20000 Tk</p>
+                </div>
+            </div>
         </div>
-        <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow duration-300 w-50 mt-10 m-3">
-            <img src="asset/table.jpg" alt="Product 2" class="w-full h-48 object-cover rounded-lg">
-            <h3 class="text-lg font-semibold mt-2">Table</h3>
-            <p class="text-gray-600">15000 Tk</p>
-        </div>
-        <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow duration-300 w-50 mt-10 m-3">
-            <img src="asset/product3.jpg" alt="Product 3" class="w-full h-48 object-cover rounded-lg">
-            <h3 class="text-lg font-semibold mt-2">Sofa</h3>
-            <p class="text-gray-600">20000 Tk</p>
-        </div>
-        <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow duration-300 w-50 mt-10 m-3">
-            <img src="asset/product3.jpg" alt="Product 3" class="w-full h-48 object-cover rounded-lg">
-            <h3 class="text-lg font-semibold mt-2">Sofa</h3>
-            <p class="text-gray-600">20000 Tk</p>
-        </div>
-        <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow duration-300 w-50 mt-10 m-3">
-            <img src="asset/product1.jpg" alt="Product 1" class="w-full h-48 object-cover rounded-lg">
-            <h3 class="text-lg font-semibold mt-2">Chair</h3>
-            <p class="text-gray-600">10000 Tk</p>
-        </div>
-        <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow duration-300 w-50 mt-10 m-3">
-            <img src="asset/table.jpg" alt="Product 2" class="w-full h-48 object-cover rounded-lg">
-            <h3 class="text-lg font-semibold mt-2">Table</h3>
-            <p class="text-gray-600">15000 Tk</p>
-        </div>
-        <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow duration-300 w-50 mt-10 m-3">
-            <img src="asset/product3.jpg" alt="Product 3" class="w-full h-48 object-cover rounded-lg">
-            <h3 class="text-lg font-semibold mt-2">Sofa</h3>
-            <p class="text-gray-600">20000 Tk</p>
-        </div>
-        <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow duration-300 w-50 mt-10 m-3">
-            <img src="asset/product3.jpg" alt="Product 3" class="w-full h-48 object-cover rounded-lg">
-            <h3 class="text-lg font-semibold mt-2">Sofa</h3>
-            <p class="text-gray-600">20000 Tk</p>
-        </div>
-        </div>
-        
     </div>
-<div class="text-center mt-5 mb-5">
-    <button class="bg-white hover:bg-yellow-600 text-yellow-500 hover:text-white font-semibold py-3 px-6 rounded-lg shadow-md transition duration-300 border border-yellow-500">
-        Load More
-    </button>
-</div>
+    <div class="text-center px-4 py-6">
+        <button class="bg-white hover:bg-yellow-600 text-yellow-500 hover:text-white font-semibold py-3 px-6 rounded-lg shadow-md transition duration-300 border border-yellow-500 text-sm sm:text-base">
+            Load More
+        </button>
+    </div>
 
-<div class="bg-yellow-50 h-auto mb-6 mt-6 p-6">
-  <div class="flex flex-col lg:flex-row items-center gap-6 max-w-6xl mx-auto">
-    <div class="flex-1">
-      <h1 class="text-3xl font-bold mb-4">
-        50+ Beautiful rooms<br>inspiration
-      </h1>
-      <p class="text-gray-600 text-base">Explore our curated collection of stunning room designs to inspire your next project.</p>
+    <div class="bg-yellow-50 px-4 py-6 sm:py-8 lg:py-12">
+        <div class="flex flex-col lg:flex-row items-center gap-6 max-w-6xl mx-auto">
+            <div class="flex-1 text-center lg:text-left">
+                <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">
+                    50+ Beautiful rooms<br>inspiration
+                </h1>
+                <p class="text-gray-600 text-sm sm:text-base">Explore our curated collection of stunning room designs to inspire your next project.</p>
+            </div>
+            
+            <div class="flex-1 w-full">
+                <div class="flex gap-2 sm:gap-4 overflow-x-auto pb-2">
+                    <img src="asset/ad.jpg" alt="Room Inspiration" class="w-48 h-48 sm:w-64 sm:h-64 object-cover rounded-lg flex-shrink-0">
+                    <img src="asset/ad2.png" alt="Room Inspiration" class="w-48 h-48 sm:w-64 sm:h-64 object-cover rounded-lg flex-shrink-0">
+                </div>
+            </div>
+        </div>
     </div>
-    
-    <div class="flex-1">
-      <div class="flex gap-4 overflow-x-auto">
-        <img src="asset/ad.jpg" alt="Room Inspiration" class="w-64 h-64 object-cover rounded-lg flex-shrink-0">
-        <img src="asset/ad2.png" alt="Room Inspiration" class="w-64 h-64 object-cover rounded-lg flex-shrink-0">
-      </div>
+    <div class="text-center px-4 py-6">
+        <p class="text-gray-600 text-xs sm:text-sm mb-2">Explore our curated collection of stunning room designs to inspire your next project.</p>
+        <h1 class="text-2xl sm:text-3xl font-bold mb-4">#MyFurniture</h1>
+        <div class="flex justify-center gap-2 sm:gap-4 overflow-x-auto pb-2">
+            <img src="asset/product1.jpg" alt="Abstract 1" class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-cover rounded-lg flex-shrink-0">
+            <img src="asset/table.jpg" alt="Abstract 2" class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-cover rounded-lg flex-shrink-0">
+            <img src="asset/product3.jpg" alt="Abstract 3" class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-cover rounded-lg flex-shrink-0">
+            <img src="asset/product1.jpg" alt="Abstract 4" class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-cover rounded-lg flex-shrink-0">
+        </div>
     </div>
-  </div>
-</div>
-<div class="text-center mt-5 mb-5">
-    <p class="text-gray-600 text-sm">Explore our curated collection of stunning room designs to inspire your next project.</p>
-    <h1 class="text-3xl font-bold mb-4 font-family-mono">#MyFurniture</h1>
-    <div class="flex justify-center space-x-4">
-        <img src="asset/product1.jpg" alt="Abstract 1" class="w-24 h-24 object-cover rounded-lg">
-        <img src="asset/table.jpg" alt="Abstract 2" class="w-24 h-24 object-cover rounded-lg">
-        <img src="asset/product3.jpg" alt="Abstract 3" class="w-24 h-24 object-cover rounded-lg">
-        <img src="asset/product1.jpg" alt="Abstract 4" class="w-24 h-24 object-cover rounded-lg">
-    </div>
-</div>
 <hr class="my-8 border-gray-300">
 <footer class="bg-gray-800 text-white py-12">
     <div class="max-w-6xl mx-auto px-4">
@@ -227,5 +252,13 @@
         </div>
     </div>
 </footer>
+
+<!-- Mobile Menu JavaScript -->
+<script>
+    document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenu.classList.toggle('hidden');
+    });
+</script>
   </body>
 </html>
