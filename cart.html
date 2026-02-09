@@ -1,0 +1,136 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Cart</title>
+  </head>
+  <body class="bg-gray-50">
+    <header class="flex items-center justify-center min-h-[60px] bg-white shadow-sm">
+      <div class="flex items-center justify-between w-full max-w-6xl px-4 py-2">
+        <div class="flex items-center space-x-2">
+          <img src="asset/logo.png" alt="Logo" class="h-6 w-auto sm:h-8" />
+          <h2 class="text-base sm:text-lg font-semibold">FURNITURE</h2>
+        </div>
+        <nav class="hidden md:flex items-center justify-center space-x-4 flex-1">
+          <a href="index.html" class="text-gray-700 hover:text-gray-900 text-sm lg:text-base">Home</a>
+          <a href="index.html#products" class="text-gray-700 hover:text-gray-900 text-sm lg:text-base">Products</a>
+          <a href="about.html" class="text-gray-700 hover:text-gray-900 text-sm lg:text-base">About</a>
+          <a href="contact.html" class="text-gray-700 hover:text-gray-900 text-sm lg:text-base">Contact</a>
+          <a href="policies.html" class="text-gray-700 hover:text-gray-900 text-sm lg:text-base">Policies</a>
+        </nav>
+        <div class="flex items-center space-x-2 sm:space-x-4">
+          <a href="profile.html" class="text-gray-700 hover:text-gray-900 transition-transform duration-150 active:scale-90"><img src="asset/profile.png" alt="Profile" class="h-5 w-5 sm:h-6 sm:w-6" /></a>
+          <a href="#" onclick="toggleSearch(event)" class="text-gray-700 hover:text-gray-900 transition-transform duration-150 active:scale-90">
+            <img src="asset/search.png" alt="Search" class="h-5 w-5 sm:h-6 sm:w-6" />
+          </a>
+          <a href="wishlist.html" class="text-gray-700 hover:text-gray-900 transition-transform duration-150 active:scale-90"><img src="asset/wishlist.png" alt="Wishlist" class="h-5 w-5 sm:h-6 sm:w-6" /></a>
+          <a href="cart.html" class="text-gray-700 hover:text-gray-900 transition-transform duration-150 active:scale-90"><img src="asset/cart.png" alt="Cart" class="h-5 w-5 sm:h-6 sm:w-6" /></a>
+          <button class="md:hidden ml-2 text-gray-700" id="mobile-menu-btn">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="md:hidden bg-white border-t border-gray-200 hidden" id="mobile-menu">
+        <div class="px-4 py-2 space-y-2">
+          <a href="index.html" class="block text-gray-700 hover:text-gray-900 py-2">Home</a>
+          <a href="index.html#products" class="block text-gray-700 hover:text-gray-900 py-2">Products</a>
+          <a href="about.html" class="block text-gray-700 hover:text-gray-900 py-2">About</a>
+          <a href="contact.html" class="block text-gray-700 hover:text-gray-900 py-2">Contact</a>
+          <a href="policies.html" class="block text-gray-700 hover:text-gray-900 py-2">Policies</a>
+        </div>
+      </div>
+    </header>
+    <div id="search-bar" class="hidden absolute left-0 right-0 z-30 bg-white shadow-md border-t border-gray-200 opacity-0 -translate-y-2 transform transition duration-200 ease-out pointer-events-none">
+      <div class="max-w-6xl mx-auto px-4 py-3 flex items-center gap-3">
+        <img src="asset/search.png" alt="Search" class="h-5 w-5 opacity-60" />
+        <input id="search-input" type="text" placeholder="Search products..." class="w-full bg-transparent focus:outline-none text-sm sm:text-base" />
+        <button onclick="toggleSearch(event)" class="text-gray-500 hover:text-gray-800 text-sm font-medium">Close</button>
+      </div>
+    </div>
+
+    <main class="max-w-6xl mx-auto px-4 py-8 space-y-6">
+      <div class="flex items-center justify-between">
+        <h1 class="text-2xl sm:text-3xl font-bold text-gray-900">Your Cart</h1>
+        <span class="text-sm text-gray-500">Review items and complete checkout.</span>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <section class="lg:col-span-2 space-y-4">
+          <div class="flex items-center gap-4 bg-white rounded-2xl border border-gray-100 p-4 shadow-sm">
+            <img src="asset/product1.jpg" alt="Chair" class="w-24 h-24 object-cover rounded-xl" />
+            <div class="flex-1">
+              <div class="flex items-start justify-between">
+                <div>
+                  <h3 class="text-lg font-semibold text-gray-900">Modern Chair</h3>
+                  <p class="text-sm text-gray-500">Walnut frame · Fabric seat</p>
+                </div>
+                <span class="text-base font-semibold text-gray-900">10,000 Tk</span>
+              </div>
+              <div class="mt-3 flex items-center gap-3 text-sm text-gray-600">
+                <label class="text-gray-700">Qty</label>
+                <div class="flex items-center border border-gray-200 rounded-lg overflow-hidden">
+                  <button class="px-3 py-1 hover:bg-gray-50">-</button>
+                  <span class="px-4">1</span>
+                  <button class="px-3 py-1 hover:bg-gray-50">+</button>
+                </div>
+                <button class="ml-auto text-red-500 hover:text-red-600 font-medium">Remove</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-4 bg-white rounded-2xl border border-gray-100 p-4 shadow-sm">
+            <img src="asset/table.jpg" alt="Table" class="w-24 h-24 object-cover rounded-xl" />
+            <div class="flex-1">
+              <div class="flex items-start justify-between">
+                <div>
+                  <h3 class="text-lg font-semibold text-gray-900">Dining Table</h3>
+                  <p class="text-sm text-gray-500">Solid oak · 6 seats</p>
+                </div>
+                <span class="text-base font-semibold text-gray-900">15,000 Tk</span>
+              </div>
+              <div class="mt-3 flex items-center gap-3 text-sm text-gray-600">
+                <label class="text-gray-700">Qty</label>
+                <div class="flex items-center border border-gray-200 rounded-lg overflow-hidden">
+                  <button class="px-3 py-1 hover:bg-gray-50">-</button>
+                  <span class="px-4">1</span>
+                  <button class="px-3 py-1 hover:bg-gray-50">+</button>
+                </div>
+                <button class="ml-auto text-red-500 hover:text-red-600 font-medium">Remove</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <aside class="bg-white rounded-2xl border border-gray-100 p-5 shadow-sm h-fit space-y-4">
+          <h2 class="text-lg font-semibold text-gray-900">Order Summary</h2>
+          <div class="flex justify-between text-sm text-gray-600">
+            <span>Subtotal</span>
+            <span>25,000 Tk</span>
+          </div>
+          <div class="flex justify-between text-sm text-gray-600">
+            <span>Shipping</span>
+            <span>500 Tk</span>
+          </div>
+          <div class="flex justify-between text-sm text-gray-600">
+            <span>Tax</span>
+            <span>1,200 Tk</span>
+          </div>
+          <hr />
+          <div class="flex justify-between text-base font-semibold text-gray-900">
+            <span>Total</span>
+            <span>26,700 Tk</span>
+          </div>
+          <button class="w-full bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-3 rounded-xl shadow-sm hover:shadow-md transition duration-200">Checkout</button>
+          <p class="text-xs text-gray-500 text-center">Free returns within 30 days.</p>
+        </aside>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

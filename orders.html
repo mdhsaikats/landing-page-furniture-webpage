@@ -1,0 +1,209 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Orders & Tracking</title>
+  </head>
+  <body class="bg-gray-50">
+    <header class="flex items-center justify-center min-h-[60px] bg-white shadow-sm">
+      <div class="flex items-center justify-between w-full max-w-6xl px-4 py-2">
+        <div class="flex items-center space-x-2">
+          <img src="asset/logo.png" alt="Logo" class="h-6 w-auto sm:h-8" />
+          <h2 class="text-base sm:text-lg font-semibold">FURNITURE</h2>
+        </div>
+        <nav class="hidden md:flex items-center justify-center space-x-4 flex-1">
+          <a href="index.html" class="text-gray-700 hover:text-gray-900 text-sm lg:text-base">Home</a>
+          <a href="index.html#products" class="text-gray-700 hover:text-gray-900 text-sm lg:text-base">Products</a>
+          
+          
+          <a href="about.html" class="text-gray-700 hover:text-gray-900 text-sm lg:text-base">About</a>
+          <a href="contact.html" class="text-gray-700 hover:text-gray-900 text-sm lg:text-base">Contact</a>
+          <a href="policies.html" class="text-gray-700 hover:text-gray-900 text-sm lg:text-base">Policies</a>
+        </nav>
+        <div class="flex items-center space-x-2 sm:space-x-4">
+          <a href="profile.html" class="text-gray-700 hover:text-gray-900 transition-transform duration-150 active:scale-90"><img src="asset/profile.png" alt="Profile" class="h-5 w-5 sm:h-6 sm:w-6" /></a>
+          <a href="#" onclick="toggleSearch(event)" class="text-gray-700 hover:text-gray-900 transition-transform duration-150 active:scale-90">
+            <img src="asset/search.png" alt="Search" class="h-5 w-5 sm:h-6 sm:w-6" />
+          </a>
+          <a href="wishlist.html" class="text-gray-700 hover:text-gray-900 transition-transform duration-150 active:scale-90"><img src="asset/wishlist.png" alt="Wishlist" class="h-5 w-5 sm:h-6 sm:w-6" /></a>
+          <a href="cart.html" class="text-gray-700 hover:text-gray-900 transition-transform duration-150 active:scale-90"><img src="asset/cart.png" alt="Cart" class="h-5 w-5 sm:h-6 sm:w-6" /></a>
+          <button class="md:hidden ml-2 text-gray-700" id="mobile-menu-btn">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="md:hidden bg-white border-t border-gray-200 hidden" id="mobile-menu">
+        <div class="px-4 py-2 space-y-2">
+          <a href="index.html" class="block text-gray-700 hover:text-gray-900 py-2">Home</a>
+          <a href="index.html#products" class="block text-gray-700 hover:text-gray-900 py-2">Products</a>
+          
+          
+          <a href="about.html" class="block text-gray-700 hover:text-gray-900 py-2">About</a>
+          <a href="contact.html" class="block text-gray-700 hover:text-gray-900 py-2">Contact</a>
+          <a href="policies.html" class="block text-gray-700 hover:text-gray-900 py-2">Policies</a>
+        </div>
+      </div>
+    </header>
+    <div id="search-bar" class="hidden absolute left-0 right-0 z-30 bg-white shadow-md border-t border-gray-200 opacity-0 -translate-y-2 transform transition duration-200 ease-out pointer-events-none">
+      <div class="max-w-6xl mx-auto px-4 py-3 flex items-center gap-3">
+        <img src="asset/search.png" alt="Search" class="h-5 w-5 opacity-60" />
+        <input id="search-input" type="text" placeholder="Search products..." class="w-full bg-transparent focus:outline-none text-sm sm:text-base" />
+        <button onclick="toggleSearch(event)" class="text-gray-500 hover:text-gray-800 text-sm font-medium">Close</button>
+      </div>
+    </div>
+
+    <main class="max-w-6xl mx-auto px-4 py-8 space-y-8">
+      <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+        <div>
+          <p class="text-xs uppercase tracking-wide text-gray-500">Orders</p>
+          <h1 class="text-2xl sm:text-3xl font-bold text-gray-900">Track your deliveries</h1>
+        </div>
+        <div class="flex gap-2 text-sm text-gray-600">
+          <span class="px-3 py-1 rounded-full bg-yellow-50 text-yellow-700 border border-yellow-100">Live status</span>
+          <span class="px-3 py-1 rounded-full bg-green-50 text-green-700 border border-green-100">History</span>
+        </div>
+      </div>
+
+      <section class="bg-white border border-gray-100 rounded-2xl shadow-sm p-5 space-y-5">
+        <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <p class="text-sm text-gray-500">Order ID</p>
+            <p class="text-lg font-semibold text-gray-900">#FUR-20451</p>
+          </div>
+          <div class="flex gap-3 text-sm text-gray-700">
+            <div class="flex items-center gap-1 px-3 py-1 rounded-full bg-green-50 text-green-700 border border-green-100">Delivered</div>
+            <div class="flex items-center gap-1 px-3 py-1 rounded-full bg-gray-50 text-gray-700 border border-gray-100">Cashless</div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 text-sm text-gray-700">
+          <div class="p-4 rounded-xl bg-gray-50 border border-gray-100">
+            <p class="text-gray-500">Placed</p>
+            <p class="font-semibold text-gray-900">Feb 10, 09:12</p>
+          </div>
+          <div class="p-4 rounded-xl bg-gray-50 border border-gray-100">
+            <p class="text-gray-500">Packed</p>
+            <p class="font-semibold text-gray-900">Feb 10, 12:30</p>
+          </div>
+          <div class="p-4 rounded-xl bg-gray-50 border border-gray-100">
+            <p class="text-gray-500">Out for delivery</p>
+            <p class="font-semibold text-gray-900">Feb 11, 09:00</p>
+          </div>
+          <div class="p-4 rounded-xl bg-green-50 border border-green-100">
+            <p class="text-gray-500">Delivered</p>
+            <p class="font-semibold text-gray-900">Feb 11, 14:20</p>
+          </div>
+        </div>
+
+        <div class="relative">
+          <div class="absolute left-4 top-3 bottom-3 w-0.5 bg-gray-200"></div>
+          <div class="space-y-4">
+            <div class="relative flex items-start gap-3">
+              <span class="h-3 w-3 rounded-full bg-green-600 mt-1.5"></span>
+              <div class="p-4 rounded-xl border border-gray-100 bg-white w-full">
+                <div class="flex items-center justify-between text-sm text-gray-700">
+                  <p class="font-semibold text-gray-900">Delivered</p>
+                  <p>Feb 11, 14:20</p>
+                </div>
+                <p class="text-gray-600 text-sm">Package handed to customer. Signed by A. Rahman.</p>
+              </div>
+            </div>
+            <div class="relative flex items-start gap-3">
+              <span class="h-3 w-3 rounded-full bg-yellow-500 mt-1.5"></span>
+              <div class="p-4 rounded-xl border border-gray-100 bg-white w-full">
+                <div class="flex items-center justify-between text-sm text-gray-700">
+                  <p class="font-semibold text-gray-900">Out for delivery</p>
+                  <p>Feb 11, 09:00</p>
+                </div>
+                <p class="text-gray-600 text-sm">Rider: Mahmud · Contact: 01234-567890</p>
+              </div>
+            </div>
+            <div class="relative flex items-start gap-3">
+              <span class="h-3 w-3 rounded-full bg-blue-500 mt-1.5"></span>
+              <div class="p-4 rounded-xl border border-gray-100 bg-white w-full">
+                <div class="flex items-center justify-between text-sm text-gray-700">
+                  <p class="font-semibold text-gray-900">Shipped</p>
+                  <p>Feb 10, 18:45</p>
+                </div>
+                <p class="text-gray-600 text-sm">Left Dhaka warehouse · Tracking: CNE-4569021</p>
+              </div>
+            </div>
+            <div class="relative flex items-start gap-3">
+              <span class="h-3 w-3 rounded-full bg-gray-400 mt-1.5"></span>
+              <div class="p-4 rounded-xl border border-gray-100 bg-white w-full">
+                <div class="flex items-center justify-between text-sm text-gray-700">
+                  <p class="font-semibold text-gray-900">Placed</p>
+                  <p>Feb 10, 09:12</p>
+                </div>
+                <p class="text-gray-600 text-sm">Payment confirmed · Card ···· 3456</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-white border border-gray-100 rounded-2xl shadow-sm p-5 space-y-4">
+        <div class="flex items-center justify-between">
+          <h2 class="text-lg font-semibold text-gray-900">Order history</h2>
+          <a href="index.html#products" class="text-sm text-yellow-600 hover:text-yellow-700 font-medium">Shop more</a>
+        </div>
+        <div class="overflow-hidden rounded-xl border border-gray-100">
+          <table class="min-w-full text-sm text-gray-700">
+            <thead class="bg-gray-50 text-gray-500">
+              <tr>
+                <th class="px-4 py-3 text-left font-medium">Order</th>
+                <th class="px-4 py-3 text-left font-medium">Date</th>
+                <th class="px-4 py-3 text-left font-medium">Items</th>
+                <th class="px-4 py-3 text-left font-medium">Total</th>
+                <th class="px-4 py-3 text-left font-medium">Status</th>
+                <th class="px-4 py-3 text-left font-medium">Actions</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100 bg-white">
+              <tr>
+                <td class="px-4 py-3 font-semibold text-gray-900">#FUR-20451</td>
+                <td class="px-4 py-3">Feb 10, 2026</td>
+                <td class="px-4 py-3">Modern Chair, Coffee Table</td>
+                <td class="px-4 py-3">29,400 Tk</td>
+                <td class="px-4 py-3"><span class="px-2 py-1 rounded-full bg-green-50 text-green-700 border border-green-100 text-xs">Delivered</span></td>
+                <td class="px-4 py-3 space-x-2 text-sm">
+                  <a href="#" class="text-yellow-600 hover:text-yellow-700 font-medium">Invoice</a>
+                  <a href="#" class="text-gray-600 hover:text-gray-800">Reorder</a>
+                </td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 font-semibold text-gray-900">#FUR-20387</td>
+                <td class="px-4 py-3">Jan 28, 2026</td>
+                <td class="px-4 py-3">Sectional Sofa</td>
+                <td class="px-4 py-3">22,000 Tk</td>
+                <td class="px-4 py-3"><span class="px-2 py-1 rounded-full bg-yellow-50 text-yellow-700 border border-yellow-100 text-xs">In transit</span></td>
+                <td class="px-4 py-3 space-x-2 text-sm">
+                  <a href="#" class="text-yellow-600 hover:text-yellow-700 font-medium">Track</a>
+                  <a href="#" class="text-gray-600 hover:text-gray-800">Support</a>
+                </td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 font-semibold text-gray-900">#FUR-20310</td>
+                <td class="px-4 py-3">Jan 10, 2026</td>
+                <td class="px-4 py-3">Dining Table</td>
+                <td class="px-4 py-3">15,000 Tk</td>
+                <td class="px-4 py-3"><span class="px-2 py-1 rounded-full bg-gray-50 text-gray-700 border border-gray-200 text-xs">Returned</span></td>
+                <td class="px-4 py-3 space-x-2 text-sm">
+                  <a href="#" class="text-yellow-600 hover:text-yellow-700 font-medium">Details</a>
+                  <a href="#" class="text-gray-600 hover:text-gray-800">Help</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

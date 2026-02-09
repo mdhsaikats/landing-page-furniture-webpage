@@ -1,0 +1,123 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Policies</title>
+  </head>
+  <body class="bg-gray-50">
+    <header class="flex items-center justify-center min-h-[60px] bg-white shadow-sm">
+      <div class="flex items-center justify-between w-full max-w-6xl px-4 py-2">
+        <div class="flex items-center space-x-2">
+          <img src="asset/logo.png" alt="Logo" class="h-6 w-auto sm:h-8" />
+          <h2 class="text-base sm:text-lg font-semibold">FURNITURE</h2>
+        </div>
+        <nav class="hidden md:flex items-center justify-center space-x-4 flex-1">
+          <a href="index.html" class="text-gray-700 hover:text-gray-900 text-sm lg:text-base">Home</a>
+          <a href="index.html#products" class="text-gray-700 hover:text-gray-900 text-sm lg:text-base">Products</a>
+          
+          
+          <a href="about.html" class="text-gray-700 hover:text-gray-900 text-sm lg:text-base">About</a>
+          <a href="contact.html" class="text-gray-700 hover:text-gray-900 text-sm lg:text-base">Contact</a>
+          <a href="policies.html" class="text-gray-700 hover:text-gray-900 text-sm lg:text-base">Policies</a>
+        </nav>
+        <div class="flex items-center space-x-2 sm:space-x-4">
+          <a href="profile.html" class="text-gray-700 hover:text-gray-900 transition-transform duration-150 active:scale-90"><img src="asset/profile.png" alt="Profile" class="h-5 w-5 sm:h-6 sm:w-6" /></a>
+          <a href="#" onclick="toggleSearch(event)" class="text-gray-700 hover:text-gray-900 transition-transform duration-150 active:scale-90">
+            <img src="asset/search.png" alt="Search" class="h-5 w-5 sm:h-6 sm:w-6" />
+          </a>
+          <a href="wishlist.html" class="text-gray-700 hover:text-gray-900 transition-transform duration-150 active:scale-90"><img src="asset/wishlist.png" alt="Wishlist" class="h-5 w-5 sm:h-6 sm:w-6" /></a>
+          <a href="cart.html" class="text-gray-700 hover:text-gray-900 transition-transform duration-150 active:scale-90"><img src="asset/cart.png" alt="Cart" class="h-5 w-5 sm:h-6 sm:w-6" /></a>
+          <button class="md:hidden ml-2 text-gray-700" id="mobile-menu-btn">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="md:hidden bg-white border-t border-gray-200 hidden" id="mobile-menu">
+        <div class="px-4 py-2 space-y-2">
+          <a href="index.html" class="block text-gray-700 hover:text-gray-900 py-2">Home</a>
+          <a href="index.html#products" class="block text-gray-700 hover:text-gray-900 py-2">Products</a>
+          
+          
+          <a href="about.html" class="block text-gray-700 hover:text-gray-900 py-2">About</a>
+          <a href="contact.html" class="block text-gray-700 hover:text-gray-900 py-2">Contact</a>
+          <a href="policies.html" class="block text-gray-700 hover:text-gray-900 py-2">Policies</a>
+        </div>
+      </div>
+    </header>
+    <div id="search-bar" class="hidden absolute left-0 right-0 z-30 bg-white shadow-md border-t border-gray-200 opacity-0 -translate-y-2 transform transition duration-200 ease-out pointer-events-none">
+      <div class="max-w-6xl mx-auto px-4 py-3 flex items-center gap-3">
+        <img src="asset/search.png" alt="Search" class="h-5 w-5 opacity-60" />
+        <input id="search-input" type="text" placeholder="Search products..." class="w-full bg-transparent focus:outline-none text-sm sm:text-base" />
+        <button onclick="toggleSearch(event)" class="text-gray-500 hover:text-gray-800 text-sm font-medium">Close</button>
+      </div>
+    </div>
+
+    <main class="max-w-6xl mx-auto px-4 py-8 space-y-8">
+      <div class="space-y-2">
+        <p class="text-xs uppercase tracking-wide text-gray-500">Policies</p>
+        <h1 class="text-3xl font-bold text-gray-900">Returns, shipping, privacy, and terms</h1>
+        <p class="text-gray-600 text-sm sm:text-base">A quick summary of how we handle your orders, data, and experience.</p>
+      </div>
+
+      <section class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="p-5 bg-white border border-gray-100 rounded-2xl shadow-sm space-y-2">
+          <h2 class="text-lg font-semibold text-gray-900">Returns</h2>
+          <p class="text-sm text-gray-700 leading-relaxed">Request a return within 7 days of delivery. Items must be unused and in original packaging. Refunds are processed after quality check.</p>
+          <ul class="text-sm text-gray-600 list-disc list-inside space-y-1">
+            <li>Pickup scheduled within 2 business days in Dhaka</li>
+            <li>Store credit or original payment refund</li>
+            <li>Assembly fees are non-refundable once service is completed</li>
+          </ul>
+        </div>
+        <div class="p-5 bg-white border border-gray-100 rounded-2xl shadow-sm space-y-2">
+          <h2 class="text-lg font-semibold text-gray-900">Shipping</h2>
+          <p class="text-sm text-gray-700 leading-relaxed">Dhaka metro: same/next day delivery. Other cities: 2-4 business days. We provide free basic delivery on orders over 5,000 Tk.</p>
+          <ul class="text-sm text-gray-600 list-disc list-inside space-y-1">
+            <li>Tracking shared via SMS and email</li>
+            <li>Optional assembly available at checkout</li>
+            <li>Missed delivery: we retry once at no cost</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="p-5 bg-white border border-gray-100 rounded-2xl shadow-sm space-y-2">
+          <h2 class="text-lg font-semibold text-gray-900">Privacy</h2>
+          <p class="text-sm text-gray-700 leading-relaxed">We collect only what we need to fulfill orders, improve support, and personalize offers. Data is encrypted in transit and at rest.</p>
+          <ul class="text-sm text-gray-600 list-disc list-inside space-y-1">
+            <li>No selling of personal data</li>
+            <li>Cookies used for performance and preferences</li>
+            <li>Access, update, or delete your data by contacting support</li>
+          </ul>
+        </div>
+        <div class="p-5 bg-white border border-gray-100 rounded-2xl shadow-sm space-y-2">
+          <h2 class="text-lg font-semibold text-gray-900">Terms</h2>
+          <p class="text-sm text-gray-700 leading-relaxed">By using our site and placing an order, you agree to our pricing, fulfillment, and warranty terms. Local laws apply for disputes.</p>
+          <ul class="text-sm text-gray-600 list-disc list-inside space-y-1">
+            <li>Prices include VAT unless stated</li>
+            <li>Warranty covers manufacturing defects for 12 months</li>
+            <li>Custom items may have different return eligibility</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="bg-white border border-gray-100 rounded-2xl shadow-sm p-5 space-y-3">
+        <h3 class="text-lg font-semibold text-gray-900">Need more detail?</h3>
+        <p class="text-sm text-gray-700 leading-relaxed">Email legal@furniture.com or read the full policy PDFs. We are happy to clarify anything before you order.</p>
+        <div class="flex gap-2 flex-wrap text-sm">
+          <a href="docs/returns-policy.txt" download class="px-4 py-2 rounded-xl border border-gray-200 text-gray-700 hover:border-gray-300">Download returns policy</a>
+          <a href="docs/privacy-policy.txt" download class="px-4 py-2 rounded-xl border border-gray-200 text-gray-700 hover:border-gray-300">Download privacy policy</a>
+          <a href="docs/shipping-policy.txt" download class="px-4 py-2 rounded-xl border border-gray-200 text-gray-700 hover:border-gray-300">Download shipping policy</a>
+          <a href="contact.html" class="px-4 py-2 rounded-xl bg-yellow-500 hover:bg-yellow-600 text-white font-semibold">Contact support</a>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

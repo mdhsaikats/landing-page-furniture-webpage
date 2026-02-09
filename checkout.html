@@ -1,0 +1,258 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Checkout</title>
+  </head>
+  <body class="bg-gray-50">
+    <header class="flex items-center justify-center min-h-[60px] bg-white shadow-sm">
+      <div class="flex items-center justify-between w-full max-w-6xl px-4 py-2">
+        <div class="flex items-center space-x-2">
+          <img src="asset/logo.png" alt="Logo" class="h-6 w-auto sm:h-8" />
+          <h2 class="text-base sm:text-lg font-semibold">FURNITURE</h2>
+        </div>
+        <nav class="hidden md:flex items-center justify-center space-x-4 flex-1">
+          <a href="index.html" class="text-gray-700 hover:text-gray-900 text-sm lg:text-base">Home</a>
+          <a href="index.html#products" class="text-gray-700 hover:text-gray-900 text-sm lg:text-base">Products</a>
+          
+          
+          <a href="about.html" class="text-gray-700 hover:text-gray-900 text-sm lg:text-base">About</a>
+          <a href="contact.html" class="text-gray-700 hover:text-gray-900 text-sm lg:text-base">Contact</a>
+          <a href="policies.html" class="text-gray-700 hover:text-gray-900 text-sm lg:text-base">Policies</a>
+        </nav>
+        <div class="flex items-center space-x-2 sm:space-x-4">
+          <a href="profile.html" class="text-gray-700 hover:text-gray-900 transition-transform duration-150 active:scale-90"><img src="asset/profile.png" alt="Profile" class="h-5 w-5 sm:h-6 sm:w-6" /></a>
+          <a href="#" onclick="toggleSearch(event)" class="text-gray-700 hover:text-gray-900 transition-transform duration-150 active:scale-90">
+            <img src="asset/search.png" alt="Search" class="h-5 w-5 sm:h-6 sm:w-6" />
+          </a>
+          <a href="wishlist.html" class="text-gray-700 hover:text-gray-900 transition-transform duration-150 active:scale-90"><img src="asset/wishlist.png" alt="Wishlist" class="h-5 w-5 sm:h-6 sm:w-6" /></a>
+          <a href="cart.html" class="text-gray-700 hover:text-gray-900 transition-transform duration-150 active:scale-90"><img src="asset/cart.png" alt="Cart" class="h-5 w-5 sm:h-6 sm:w-6" /></a>
+          <button class="md:hidden ml-2 text-gray-700" id="mobile-menu-btn">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="md:hidden bg-white border-t border-gray-200 hidden" id="mobile-menu">
+        <div class="px-4 py-2 space-y-2">
+          <a href="index.html" class="block text-gray-700 hover:text-gray-900 py-2">Home</a>
+          <a href="index.html#products" class="block text-gray-700 hover:text-gray-900 py-2">Products</a>
+          
+          
+          <a href="about.html" class="block text-gray-700 hover:text-gray-900 py-2">About</a>
+          <a href="contact.html" class="block text-gray-700 hover:text-gray-900 py-2">Contact</a>
+          <a href="policies.html" class="block text-gray-700 hover:text-gray-900 py-2">Policies</a>
+        </div>
+      </div>
+    </header>
+    <div id="search-bar" class="hidden absolute left-0 right-0 z-30 bg-white shadow-md border-t border-gray-200 opacity-0 -translate-y-2 transform transition duration-200 ease-out pointer-events-none">
+      <div class="max-w-6xl mx-auto px-4 py-3 flex items-center gap-3">
+        <img src="asset/search.png" alt="Search" class="h-5 w-5 opacity-60" />
+        <input id="search-input" type="text" placeholder="Search products..." class="w-full bg-transparent focus:outline-none text-sm sm:text-base" />
+        <button onclick="toggleSearch(event)" class="text-gray-500 hover:text-gray-800 text-sm font-medium">Close</button>
+      </div>
+    </div>
+
+    <main class="max-w-6xl mx-auto px-4 py-8 space-y-8">
+      <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <div>
+          <p class="text-xs uppercase tracking-wide text-gray-500">Checkout</p>
+          <h1 class="text-2xl sm:text-3xl font-bold text-gray-900">Complete your order</h1>
+        </div>
+        <div class="flex items-center gap-2 text-sm text-gray-600">
+          <span class="px-3 py-1 rounded-full bg-yellow-50 text-yellow-700 border border-yellow-100">Secure checkout</span>
+          <span class="px-3 py-1 rounded-full bg-green-50 text-green-700 border border-green-100">Trusted payments</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div class="lg:col-span-2 space-y-6">
+          <div class="bg-white border border-gray-100 rounded-2xl shadow-sm p-5 space-y-4">
+            <div class="flex items-center justify-between">
+              <h2 class="text-lg font-semibold text-gray-900">Billing & Shipping</h2>
+              <span class="text-sm text-gray-500">Step 1 of 3</span>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div class="space-y-2">
+                <label class="text-sm text-gray-700">Full name</label>
+                <input type="text" class="w-full rounded-xl border border-gray-200 px-3 py-2 focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500" placeholder="John Doe" />
+              </div>
+              <div class="space-y-2">
+                <label class="text-sm text-gray-700">Email</label>
+                <input type="email" class="w-full rounded-xl border border-gray-200 px-3 py-2 focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500" placeholder="john@example.com" />
+              </div>
+              <div class="space-y-2">
+                <label class="text-sm text-gray-700">Phone</label>
+                <input type="tel" class="w-full rounded-xl border border-gray-200 px-3 py-2 focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500" placeholder="(+880) 123-456-789" />
+              </div>
+              <div class="space-y-2">
+                <label class="text-sm text-gray-700">City</label>
+                <input type="text" class="w-full rounded-xl border border-gray-200 px-3 py-2 focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500" placeholder="Dhaka" />
+              </div>
+              <div class="space-y-2 sm:col-span-2">
+                <label class="text-sm text-gray-700">Address</label>
+                <input type="text" class="w-full rounded-xl border border-gray-200 px-3 py-2 focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500" placeholder="House, Street, Area" />
+              </div>
+              <div class="space-y-2">
+                <label class="text-sm text-gray-700">Postal code</label>
+                <input type="text" class="w-full rounded-xl border border-gray-200 px-3 py-2 focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500" placeholder="1207" />
+              </div>
+              <div class="space-y-2">
+                <label class="text-sm text-gray-700">Delivery notes</label>
+                <input type="text" class="w-full rounded-xl border border-gray-200 px-3 py-2 focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500" placeholder="Gate code, floor, etc." />
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white border border-gray-100 rounded-2xl shadow-sm p-5 space-y-4">
+            <div class="flex items-center justify-between">
+              <h2 class="text-lg font-semibold text-gray-900">Payment</h2>
+              <span class="text-sm text-gray-500">Step 2 of 3</span>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <label class="flex items-start gap-3 p-4 border border-gray-200 rounded-xl hover:border-yellow-500 cursor-pointer">
+                <input type="radio" name="payment" class="mt-1 text-yellow-500" checked />
+                <div>
+                  <p class="font-semibold text-gray-900">Card payment</p>
+                  <p class="text-sm text-gray-600">Visa, Mastercard, Amex</p>
+                </div>
+              </label>
+              <label class="flex items-start gap-3 p-4 border border-gray-200 rounded-xl hover:border-yellow-500 cursor-pointer">
+                <input type="radio" name="payment" class="mt-1 text-yellow-500" />
+                <div>
+                  <p class="font-semibold text-gray-900">Cash on delivery</p>
+                  <p class="text-sm text-gray-600">Pay when the item arrives</p>
+                </div>
+              </label>
+              <label class="flex items-start gap-3 p-4 border border-gray-200 rounded-xl hover:border-yellow-500 cursor-pointer">
+                <input type="radio" name="payment" class="mt-1 text-yellow-500" />
+                <div>
+                  <p class="font-semibold text-gray-900">Bkash/Nagad</p>
+                  <p class="text-sm text-gray-600">Instant mobile payment</p>
+                </div>
+              </label>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="space-y-2">
+                <label class="text-sm text-gray-700">Card number</label>
+                <input type="text" class="w-full rounded-xl border border-gray-200 px-3 py-2 focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500" placeholder="1234 5678 9012 3456" />
+              </div>
+              <div class="space-y-2">
+                <label class="text-sm text-gray-700">Name on card</label>
+                <input type="text" class="w-full rounded-xl border border-gray-200 px-3 py-2 focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500" placeholder="John Doe" />
+              </div>
+              <div class="space-y-2">
+                <label class="text-sm text-gray-700">Expiry</label>
+                <input type="text" class="w-full rounded-xl border border-gray-200 px-3 py-2 focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500" placeholder="MM/YY" />
+              </div>
+              <div class="space-y-2">
+                <label class="text-sm text-gray-700">CVC</label>
+                <input type="text" class="w-full rounded-xl border border-gray-200 px-3 py-2 focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500" placeholder="***" />
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white border border-gray-100 rounded-2xl shadow-sm p-5 space-y-4">
+            <div class="flex items-center justify-between">
+              <h2 class="text-lg font-semibold text-gray-900">Review & Confirm</h2>
+              <span class="text-sm text-gray-500">Step 3 of 3</span>
+            </div>
+            <div class="space-y-3 text-sm text-gray-700">
+              <div class="flex items-center justify-between">
+                <span>Delivery</span>
+                <span class="font-semibold text-gray-900">Tomorrow, 10 AM - 2 PM</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span>Address</span>
+                <span class="font-semibold text-gray-900">House 12, Road 4, Dhanmondi</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span>Payment</span>
+                <span class="font-semibold text-gray-900">Card ending ···· 3456</span>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-3 pt-2">
+              <button class="px-4 py-2 rounded-xl border border-gray-200 text-gray-700 hover:border-gray-300">Back to cart</button>
+              <button class="px-4 py-2 rounded-xl border border-gray-200 text-gray-700 hover:border-gray-300">Save for later</button>
+              <a href="success.html" class="flex-1 text-center bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-3 rounded-xl shadow-sm hover:shadow-md transition duration-200">Place order</a>
+            </div>
+          </div>
+        </div>
+
+        <aside class="space-y-6">
+          <div class="bg-white border border-gray-100 rounded-2xl shadow-sm p-5 space-y-4">
+            <div class="flex items-center justify-between">
+              <h3 class="text-lg font-semibold text-gray-900">Order Summary</h3>
+              <a href="cart.html" class="text-sm text-yellow-600 hover:text-yellow-700 font-medium">Edit cart</a>
+            </div>
+            <div class="space-y-3 text-sm text-gray-700">
+              <div class="flex items-center justify-between">
+                <div>
+                  <p class="font-semibold text-gray-900">Modern Chair</p>
+                  <p class="text-gray-500">Qty 1 · Beige</p>
+                </div>
+                <span class="font-semibold text-gray-900">10,000 Tk</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <div>
+                  <p class="font-semibold text-gray-900">Coffee Table</p>
+                  <p class="text-gray-500">Qty 1 · Walnut</p>
+                </div>
+                <span class="font-semibold text-gray-900">18,000 Tk</span>
+              </div>
+            </div>
+            <div class="border-t border-dashed border-gray-200 pt-4 space-y-2 text-sm text-gray-700">
+              <div class="flex items-center justify-between"><span>Subtotal</span><span>28,000 Tk</span></div>
+              <div class="flex items-center justify-between"><span>Shipping</span><span class="text-green-600 font-medium">Free</span></div>
+              <div class="flex items-center justify-between"><span>VAT (5%)</span><span>1,400 Tk</span></div>
+              <div class="flex items-center justify-between font-semibold text-gray-900 text-base">
+                <span>Total</span><span>29,400 Tk</span>
+              </div>
+            </div>
+            <div class="flex items-center gap-2 text-xs text-gray-500">
+              <span class="h-2 w-2 rounded-full bg-green-500"></span>
+              <span>Delivery: Tomorrow · Free returns within 7 days</span>
+            </div>
+          </div>
+
+          <div class="bg-white border border-green-200 rounded-2xl shadow-sm p-5 space-y-3">
+            <div class="flex items-center gap-3">
+              <div class="h-10 w-10 rounded-full bg-green-50 border border-green-100 grid place-items-center">
+                <svg class="h-5 w-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <div>
+                <p class="text-sm font-semibold text-green-700">Order confirmation</p>
+                <p class="text-xs text-gray-600">Success screen preview</p>
+              </div>
+            </div>
+            <p class="text-sm text-gray-700 leading-relaxed">
+              Thank you for your purchase. Your order <span class="font-semibold text-gray-900">#FUR-20451</span> is confirmed. You will receive delivery updates via SMS and email.
+            </p>
+            <div class="grid grid-cols-2 gap-2 text-xs text-gray-600">
+              <div class="p-3 rounded-xl bg-gray-50 border border-gray-100">
+                <p class="text-gray-500">Arrives</p>
+                <p class="font-semibold text-gray-900">Tomorrow</p>
+              </div>
+              <div class="p-3 rounded-xl bg-gray-50 border border-gray-100">
+                <p class="text-gray-500">Payment</p>
+                <p class="font-semibold text-gray-900">Card ···· 3456</p>
+              </div>
+            </div>
+            <div class="flex gap-2 pt-1">
+              <a href="orders.html" class="flex-1 text-center bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-2.5 rounded-xl shadow-sm">Track order</a>
+              <a href="index.html" class="flex-1 text-center border border-gray-200 hover:border-gray-300 text-gray-700 font-semibold py-2.5 rounded-xl">Continue shopping</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
